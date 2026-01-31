@@ -1,0 +1,27 @@
+/**
+ * For more details on how to configure Wrangler, refer to:
+ * https://developers.cloudflare.com/workers/wrangler/configuration/
+ */
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "d1-rest",
+	"main": "src/index.ts",
+	"compatibility_date": "2025-03-03",
+    "d1_databases": [
+        {
+          "binding": "DB",
+          "database_name": "NetZeroAPP",
+          "database_id": "46b799e1-67d4-4a9f-b6b0-5008e37af584"
+        }
+    ],
+    "secrets_store_secrets": [
+        {
+            "store_id": "123e7b56c5824c70862586627590b089",
+            "binding": "SECRET",
+            "secret_name": "NetZeroAPP"
+        }
+    ],
+	"observability": {
+		"enabled": true
+	}
+}
